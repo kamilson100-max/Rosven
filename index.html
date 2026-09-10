@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ROSVEN — obsessed with jewelry</title>
+    <meta
+      name="description"
+      content="Wkrótce otwarcie sklepu stacjonarnego ROSVEN w Warszawie."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600;1,6..96,500&family=Outfit:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --gold: #b08d57;
+        --ink: #1a1a1a;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+        background: #fff;
+        color: var(--ink);
+        font-family: Outfit, system-ui, sans-serif;
+      }
+      body {
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+      }
+      .glow {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background:
+          radial-gradient(ellipse at 18% 88%, rgba(176, 141, 87, 0.16), transparent 42%),
+          radial-gradient(ellipse at 88% 12%, rgba(176, 141, 87, 0.12), transparent 40%),
+          radial-gradient(ellipse at center, rgba(176, 141, 87, 0.06), transparent 58%);
+      }
+      .ring {
+        position: fixed;
+        pointer-events: none;
+        opacity: 0.22;
+      }
+      .ring-bl {
+        left: -4rem;
+        bottom: -3rem;
+        width: min(58vw, 420px);
+      }
+      .ring-tr {
+        right: -3rem;
+        top: -2rem;
+        width: min(42vw, 320px);
+        opacity: 0.16;
+      }
+      main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 4rem 1.5rem 2rem;
+        position: relative;
+        z-index: 1;
+      }
+      .logo {
+        margin: 0;
+        font-family: "Bodoni Moda", Times, serif;
+        font-weight: 600;
+        font-size: clamp(3.2rem, 12vw, 6.4rem);
+        letter-spacing: 0.02em;
+        line-height: 0.9;
+      }
+      .slogan {
+        margin: 1.75rem 0 0;
+        font-family: "Bodoni Moda", Times, serif;
+        font-style: italic;
+        font-size: clamp(0.95rem, 2.4vw, 1.15rem);
+        letter-spacing: 0.38em;
+        color: var(--gold);
+        text-transform: lowercase;
+      }
+      .line {
+        width: 4rem;
+        height: 1px;
+        background: #c4a574;
+        margin: 2.6rem 0 0;
+      }
+      .announcement {
+        margin: 2.5rem 0 0;
+        max-width: 26rem;
+        font-size: 0.78rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #4a4a4a;
+        line-height: 1.7;
+      }
+      .countdown {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.75rem;
+        margin-top: 3rem;
+        width: min(100%, 28rem);
+      }
+      .unit {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .unit b {
+        font-family: "Bodoni Moda", Times, serif;
+        font-weight: 500;
+        font-size: clamp(2rem, 8vw, 3.4rem);
+        line-height: 1;
+        font-variant-numeric: tabular-nums;
+      }
+      .unit span {
+        margin-top: 0.75rem;
+        font-size: 0.62rem;
+        font-weight: 500;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+        color: var(--gold);
+      }
+      footer {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        padding: 1rem 0 2.5rem;
+      }
+      .ig {
+        color: var(--ink);
+        width: 2.75rem;
+        height: 2.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .ig:hover {
+        color: var(--gold);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="glow"></div>
+    <svg class="ring ring-bl" viewBox="0 0 200 200" aria-hidden="true">
+      <ellipse cx="100" cy="108" rx="58" ry="22" fill="none" stroke="#c4a574" stroke-width="7" />
+      <circle cx="148" cy="92" r="14" fill="#f4f1ea" stroke="#c4a574" stroke-width="3" />
+      <circle cx="148" cy="92" r="7" fill="#fff" />
+    </svg>
+    <svg class="ring ring-tr" viewBox="0 0 200 140" aria-hidden="true">
+      <ellipse cx="70" cy="78" rx="42" ry="16" fill="none" stroke="#c4a574" stroke-width="5" />
+      <ellipse cx="118" cy="86" rx="42" ry="16" fill="none" stroke="#c4a574" stroke-width="5" />
+    </svg>
+
+    <main>
+      <h1 class="logo">ROSVEN</h1>
+      <p class="slogan">obsessed with jewelry</p>
+      <div class="line"></div>
+      <p class="announcement">Wkrótce otwarcie sklepu stacjonarnego w Warszawie</p>
+      <div class="countdown" id="countdown" role="timer" aria-label="Odliczanie do otwarcia"></div>
+    </main>
+
+    <footer>
+      <a
+        class="ig"
+        href="https://www.instagram.com/rosven"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram ROSVEN"
+      >
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5" stroke="currentColor" stroke-width="1.4" />
+          <circle cx="12" cy="12" r="4.1" stroke="currentColor" stroke-width="1.4" />
+          <circle cx="17.35" cy="6.65" r="0.9" fill="currentColor" />
+        </svg>
+      </a>
+    </footer>
+
+    <script>
+      const TARGET = new Date("2026-11-15T10:00:00+01:00").getTime();
+      const root = document.getElementById("countdown");
+      const labels = ["Dni", "Godziny", "Minuty", "Sekundy"];
+
+      function pad(n) {
+        return String(n).padStart(2, "0");
+      }
+
+      function tick() {
+        const diff = TARGET - Date.now();
+        if (diff <= 0) {
+          root.innerHTML = '<p class="slogan" style="letter-spacing:.18em">Zapraszamy do Warszawy</p>';
+          return;
+        }
+        const s = Math.floor(diff / 1000);
+        const parts = [
+          Math.floor(s / 86400),
+          Math.floor((s % 86400) / 3600),
+          Math.floor((s % 3600) / 60),
+          s % 60,
+        ];
+        root.innerHTML = parts
+          .map(
+            (value, i) =>
+              '<div class="unit"><b>' +
+              (i === 0 ? value : pad(value)) +
+              "</b><span>" +
+              labels[i] +
+              "</span></div>"
+          )
+          .join("");
+      }
+
+      tick();
+      setInterval(tick, 1000);
+    </script>
+  </body>
+</html>
